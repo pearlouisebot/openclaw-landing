@@ -3,238 +3,304 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenClaw Foundation — Own Your Data. Own Your Future.</title>
+<title>OpenClaw Foundation — The Claw is the Law 🦞</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#08080d;--surface:#10101a;--surface2:#181828;--border:#ffffff10;--red:#ff3d3d;--orange:#ff6b35;--coral:#ff4f6d;--text:#e8e8f0;--muted:#8888a0;--gradient:linear-gradient(135deg,#ff3d3d,#ff6b35,#ff4f6d)}
+:root{--bg:#08080c;--surface:#0e0e14;--surface2:#16161f;--border:#ffffff0a;--red:#ff3b30;--orange:#ff6b35;--warm:#ff8f5e;--coral:#ff4f4f;--text:#ebe8e2;--muted:#8a877f;--cream:#c8c3b8;--gold:#d4a853;--gradient:linear-gradient(135deg,#ff3b30,#ff6b35,#d4a853)}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body{font-family:'Georgia','Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 a{color:var(--orange);text-decoration:none;transition:opacity .2s}
-a:hover{opacity:.8}
+a:hover{opacity:.75}
 
-.glow{position:absolute;border-radius:50%;filter:blur(150px);pointer-events:none;opacity:.12}
-.glow-1{width:600px;height:600px;background:var(--red);top:-200px;left:-100px}
-.glow-2{width:500px;height:500px;background:var(--orange);top:200px;right:-200px}
-.glow-3{width:400px;height:400px;background:var(--coral);bottom:-100px;left:40%}
-
-nav{position:fixed;top:0;width:100%;z-index:100;backdrop-filter:blur(20px);background:rgba(8,8,13,.85);border-bottom:1px solid var(--border)}
+/* Nav */
+nav{position:fixed;top:0;width:100%;z-index:100;backdrop-filter:blur(20px);background:rgba(8,8,12,.85);border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:1.5rem;font-weight:800;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
-.logo-icon{font-size:1.8rem}
-.logo span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo{font-size:1.3rem;font-weight:700;letter-spacing:-.3px;color:var(--text)}
 .nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{color:var(--muted);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a{color:var(--muted);font-family:-apple-system,sans-serif;font-size:.85rem;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:var(--text);opacity:1}
-.nav-cta{background:var(--orange)!important;color:#000!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}
 
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden}
-.hero-content{position:relative;z-index:2;max-width:800px}
-.badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:100px;padding:8px 18px;font-size:.85rem;color:var(--muted);margin-bottom:32px}
-h1{font-size:clamp(2.8rem,7vw,4.8rem);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:24px}
-h1 .highlight{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:1.25rem;color:var(--muted);max-width:600px;margin:0 auto 40px;line-height:1.7}
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(255,107,53,.06) 0%,transparent 70%);pointer-events:none}
+.hero-content{max-width:720px;position:relative;z-index:2}
+.hero-lobster{font-size:4rem;margin-bottom:32px;display:block}
+h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;letter-spacing:-.5px;line-height:1.15;margin-bottom:28px;color:var(--text)}
+h1 em{font-style:italic;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:1.2rem;color:var(--cream);max-width:540px;margin:0 auto 20px;line-height:1.8}
+.hero-tagline{font-size:1rem;color:var(--muted);font-style:italic;margin-bottom:48px}
 .cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:600;font-size:1rem;transition:all .2s;border:none;cursor:pointer;text-decoration:none}
-.btn-primary{background:var(--gradient);color:#000}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,107,53,.3)}
-.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
-.btn-secondary:hover{border-color:var(--orange);transform:translateY(-2px)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:8px;font-weight:600;font-size:.95rem;font-family:-apple-system,sans-serif;transition:all .25s;border:none;cursor:pointer}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--warm);transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,107,53,.2)}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,.15)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.3);transform:translateY(-2px)}
 
-.manifesto{max-width:700px;margin:0 auto;padding:100px 24px;text-align:center}
-.manifesto h2{font-size:2.2rem;font-weight:800;margin-bottom:24px;letter-spacing:-1px}
-.manifesto p{font-size:1.1rem;color:var(--muted);line-height:1.8;margin-bottom:20px}
-.manifesto .accent{color:var(--orange);font-weight:600}
+/* Divider */
+.divider{text-align:center;padding:24px;color:var(--muted);font-size:.9rem;letter-spacing:6px;opacity:.3}
 
-.pillars{max-width:1100px;margin:0 auto;padding:80px 24px}
-.pillars h2{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:60px;letter-spacing:-1px}
-.pillar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.pillar{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:36px;transition:all .3s}
-.pillar:hover{border-color:rgba(255,107,53,.3);transform:translateY(-4px)}
-.pillar-icon{font-size:2.4rem;margin-bottom:16px}
-.pillar h3{font-size:1.3rem;font-weight:700;margin-bottom:12px}
-.pillar p{color:var(--muted);line-height:1.7;font-size:.95rem}
+/* Announcement */
+.announce{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 24px}
+.announce-inner{max-width:800px;margin:0 auto}
+.announce-label{font-family:-apple-system,sans-serif;text-transform:uppercase;font-size:.7rem;letter-spacing:3px;color:var(--orange);font-weight:600;margin-bottom:20px}
+.announce-inner h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.3;margin-bottom:24px;letter-spacing:-.3px}
+.announce-inner p{color:var(--cream);font-size:1.05rem;line-height:1.9;margin-bottom:20px}
+.announce-inner p.muted{color:var(--muted);font-size:.95rem}
 
-.board{max-width:900px;margin:0 auto;padding:100px 24px;text-align:center}
-.board h2{font-size:2.2rem;font-weight:800;margin-bottom:16px;letter-spacing:-1px}
-.board .subtitle{color:var(--muted);margin-bottom:60px;font-size:1.05rem}
-.board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px;text-align:center}
-.board-member{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:40px 24px;transition:all .3s}
-.board-member:hover{border-color:rgba(255,107,53,.3)}
-.member-avatar{width:80px;height:80px;border-radius:50%;background:var(--surface2);border:2px solid var(--border);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:2rem}
-.member-name{font-size:1.15rem;font-weight:700;margin-bottom:4px}
-.member-role{color:var(--orange);font-size:.85rem;font-weight:600;margin-bottom:8px}
-.member-bio{color:var(--muted);font-size:.9rem;line-height:1.6}
+/* Pillars */
+section{padding:100px 24px;position:relative}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-family:-apple-system,sans-serif;text-transform:uppercase;font-size:.7rem;letter-spacing:3px;color:var(--orange);font-weight:600;margin-bottom:16px}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-.3px;margin-bottom:16px;line-height:1.25}
+.section-desc{color:var(--muted);max-width:560px;font-size:1rem;margin-bottom:56px}
 
-.quote-section{max-width:800px;margin:0 auto;padding:80px 24px;text-align:center}
-.big-quote{font-size:1.6rem;font-weight:600;font-style:italic;line-height:1.6;margin-bottom:24px;color:var(--text)}
-.big-quote::before{content:'"';font-size:4rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;line-height:.5;margin-bottom:16px}
-.quote-attr{color:var(--muted);font-size:1rem}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.pillar{background:var(--surface);padding:40px 32px}
+.pillar-icon{font-size:1.6rem;margin-bottom:16px;display:block}
+.pillar h3{font-size:1.1rem;font-weight:700;margin-bottom:10px;font-family:-apple-system,sans-serif}
+.pillar p{color:var(--muted);font-size:.9rem;line-height:1.7;font-family:-apple-system,sans-serif}
 
-.community{max-width:1100px;margin:0 auto;padding:80px 24px}
-.community h2{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:16px;letter-spacing:-1px}
-.community .subtitle{text-align:center;color:var(--muted);margin-bottom:48px;font-size:1.05rem}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;text-align:center}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px}
-.stat-num{font-size:2.5rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
-.stat-label{color:var(--muted);font-size:.9rem}
+/* Quotes */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:32px}
+.quote-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:40px;position:relative}
+.quote-card::before{content:'"';position:absolute;top:16px;left:28px;font-size:4rem;color:rgba(255,107,53,.15);line-height:1;font-family:Georgia,serif}
+.quote-text{font-size:1.1rem;line-height:1.8;color:var(--cream);margin-bottom:24px;font-style:italic;position:relative;z-index:1}
+.quote-author{display:flex;align-items:center;gap:16px}
+.quote-avatar{width:48px;height:48px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;border:1px solid var(--border)}
+.quote-meta{font-family:-apple-system,sans-serif}
+.quote-name{font-size:.95rem;font-weight:600}
+.quote-role{font-size:.8rem;color:var(--muted)}
 
-.cta-section{text-align:center;padding:100px 24px;position:relative}
-.cta-section h2{font-size:2.4rem;font-weight:800;margin-bottom:16px;letter-spacing:-1px}
-.cta-section p{color:var(--muted);font-size:1.1rem;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
-.cta-tagline{margin-top:48px;font-size:1.3rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+/* Board */
+.board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.board-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:36px;text-align:center}
+.board-emoji{font-size:2.4rem;margin-bottom:16px}
+.board-card h3{font-size:1.1rem;font-weight:700;margin-bottom:4px;font-family:-apple-system,sans-serif}
+.board-card .role{font-size:.8rem;color:var(--orange);text-transform:uppercase;letter-spacing:1.5px;font-family:-apple-system,sans-serif;font-weight:600;margin-bottom:12px}
+.board-card p{color:var(--muted);font-size:.85rem;font-family:-apple-system,sans-serif;line-height:1.6}
 
-footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
-footer a{color:var(--muted)}
+/* Manifesto */
+.manifesto{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.manifesto-inner{max-width:680px;margin:0 auto;text-align:center}
+.manifesto-inner h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:32px;line-height:1.3}
+.manifesto-points{list-style:none;text-align:left;display:grid;gap:16px}
+.manifesto-points li{display:flex;gap:16px;align-items:baseline;color:var(--cream);font-size:1rem;line-height:1.7}
+.manifesto-points li::before{content:'🦞';flex-shrink:0;font-size:.9rem}
+
+/* CTA */
+.final-cta{text-align:center;padding:120px 24px;position:relative}
+.final-cta h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+.final-cta h2 em{font-style:italic;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.final-cta p{color:var(--muted);font-size:1.05rem;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
+.final-cta .lobster-row{font-size:1.8rem;letter-spacing:12px;margin-bottom:48px;opacity:.4}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:40px 24px}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-links{display:flex;gap:24px}
+.footer-links a{color:var(--muted);font-family:-apple-system,sans-serif;font-size:.85rem}
+footer small{color:var(--muted);font-family:-apple-system,sans-serif;font-size:.8rem}
 
 @media(max-width:768px){
-.nav-links{display:none}
-h1{font-size:2.4rem}
-.pillar-grid{grid-template-columns:1fr}
-.board-grid{grid-template-columns:1fr}
-.stat-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links a:not(:last-child){display:none}
+  .pillars{grid-template-columns:1fr}
+  .quotes{grid-template-columns:1fr}
+  .board-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+
+@media(prefers-reduced-motion:no-preference){
+  .pillar,.quote-card,.board-card{opacity:0;transform:translateY(16px);animation:fadeUp .5s forwards}
+  .pillar:nth-child(2),.quote-card:nth-child(2),.board-card:nth-child(2){animation-delay:.1s}
+  .pillar:nth-child(3),.board-card:nth-child(3){animation-delay:.2s}
+  .pillar:nth-child(4){animation-delay:.3s}
+  .pillar:nth-child(5){animation-delay:.4s}
+  .pillar:nth-child(6){animation-delay:.5s}
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 }
 </style>
 </head>
 <body>
 
 <nav>
-<div class="nav-inner">
-<div class="logo"><span class="logo-icon">🦞</span> <span>OpenClaw</span></div>
-<div class="nav-links">
-<a href="#manifesto">Mission</a>
-<a href="#pillars">Principles</a>
-<a href="#board">Board</a>
-<a href="#community">Community</a>
-<a href="https://github.com/nicepkg/openclaw" class="nav-cta">GitHub →</a>
-</div>
-</div>
+  <div class="nav-inner">
+    <div class="logo">🦞 OpenClaw</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#principles">Principles</a>
+      <a href="#board">Board</a>
+      <a href="https://docs.openclaw.ai">Docs</a>
+      <a href="https://github.com/openclaw/openclaw">GitHub</a>
+    </div>
+  </div>
 </nav>
 
 <section class="hero">
-<div class="glow glow-1"></div>
-<div class="glow glow-2"></div>
-<div class="hero-content">
-<div class="badge">🦞 Now an independent foundation</div>
-<h1>Own Your Data.<br><span class="highlight">Own Your Future.</span></h1>
-<p>The OpenClaw Foundation is a home for thinkers, hackers, and those who believe you should control your own digital life. Open source. Community-driven. Forever independent.</p>
-<div class="cta-group">
-<a href="https://github.com/nicepkg/openclaw" class="btn btn-primary">View on GitHub</a>
-<a href="https://discord.com/invite/clawd" class="btn btn-secondary">Join the Community</a>
-</div>
-</div>
+  <div class="hero-content">
+    <span class="hero-lobster">🦞</span>
+    <h1>An open home for<br><em>personal AI</em></h1>
+    <p class="hero-sub">The OpenClaw Foundation is an independent, open-source foundation building the future of AI agents that you own, you control, and you run.</p>
+    <p class="hero-tagline">The claw is the law.</p>
+    <div class="cta-group">
+      <a href="https://github.com/openclaw/openclaw" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+      <a href="https://discord.com/invite/clawd" class="btn btn-ghost">Join the Community</a>
+    </div>
+  </div>
 </section>
 
-<section class="quote-section">
-<div class="big-quote">A home for thinkers and hackers and those that want to own their data. This community built something extraordinary.</div>
-<div class="quote-attr">— Dave Morin, Founding Independent Board Member</div>
+<div class="announce" id="about">
+  <div class="announce-inner">
+    <div class="announce-label">Announcement</div>
+    <h2>OpenClaw is now a Foundation</h2>
+    <p>OpenClaw was created by Peter Steinberger as an open-source platform for personal AI agents — software that doesn't just answer questions, but takes action on your behalf. Your email, your calendar, your files, your messages. Managed by AI that works for <em>you</em>.</p>
+    <p>Now, as Peter joins OpenAI to drive the next generation of personal agents, OpenClaw is becoming something bigger: an independent Foundation dedicated to keeping personal AI open, interoperable, and user-controlled.</p>
+    <p class="muted">OpenAI and Sam Altman will continue to sponsor and support the project. But the Foundation answers to its community — not to any single company.</p>
+  </div>
+</div>
+
+<section id="principles">
+  <div class="section-inner">
+    <div class="section-label">What We Believe</div>
+    <div class="section-title">Your data. Your agents. Your rules.</div>
+    <div class="section-desc">The Foundation exists to protect a simple idea: the AI that runs your life should be controlled by you.</div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-icon">🔓</span>
+        <h3>Data Ownership</h3>
+        <p>Your personal data stays on your hardware. No cloud lock-in. No training on your emails. Self-host on a laptop, a VPS, or a Raspberry Pi.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🌐</span>
+        <h3>Model Independence</h3>
+        <p>Not locked to any single AI company. Support for multiple models and providers — swap, mix, or self-host. The agent layer is yours.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🏗️</span>
+        <h3>Open Source Forever</h3>
+        <p>The Foundation structure guarantees OpenClaw stays open. No rug pulls. No relicensing. Built in public, governed in public.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🤝</span>
+        <h3>Community Governed</h3>
+        <p>Independent board. Open governance. Decisions made by the people who build and use the software, not by investors or acquirers.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🔧</span>
+        <h3>For Hackers & Builders</h3>
+        <p>Extensible by design. A skills ecosystem, plugin architecture, and the freedom to build exactly the agent you need.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🛡️</span>
+        <h3>The Open Internet</h3>
+        <p>Personal AI shouldn't be a walled garden. We build for interoperability, open standards, and a future where your digital life isn't rented from a corporation.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="manifesto" class="manifesto">
-<h2>The internet forgot who it belongs to.</h2>
-<p>Your conversations, your photos, your memories, your preferences — scattered across platforms that monetize you and lock you in. You are the product, not the customer.</p>
-<p><span class="accent">We're building the alternative.</span> OpenClaw is an open-source AI agent that works for you — on your machine, with your data, under your control. Not a service you subscribe to. Not a platform that owns you. Software that belongs to you.</p>
-<p>When Peter Steinberger started OpenClaw, it was a playground project. Then it became a movement. Now it's a foundation — ensuring that this technology stays open, independent, and in the hands of the people who use it.</p>
+<section style="background:var(--surface)">
+  <div class="section-inner">
+    <div class="section-label">In Their Words</div>
+    <div class="section-title">Why this matters</div>
+    <div class="section-desc" style="margin-bottom:40px"></div>
+
+    <div class="quotes">
+      <div class="quote-card">
+        <div class="quote-text">It will stay a place for thinkers, hackers and people that want a way to own their data, with the goal of supporting even more models and companies.</div>
+        <div class="quote-author">
+          <div class="quote-avatar">PS</div>
+          <div class="quote-meta">
+            <div class="quote-name">Peter Steinberger</div>
+            <div class="quote-role">Creator of OpenClaw · OpenAI</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">A home for thinkers and hackers and those that want to own their data. Honored to serve as the founding independent board member.</div>
+        <div class="quote-author">
+          <div class="quote-avatar">DM</div>
+          <div class="quote-meta">
+            <div class="quote-name">Dave Morin</div>
+            <div class="quote-role">Founding Board Member · Slow Ventures · Offline Ventures</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="pillars" class="pillars">
-<h2>Foundation Principles</h2>
-<div class="pillar-grid">
-<div class="pillar">
-<div class="pillar-icon">🔓</div>
-<h3>Open Source Forever</h3>
-<p>OpenClaw's code is and will always be open source. No bait-and-switch. No open-core tricks. The foundation structure guarantees independence from any single company.</p>
-</div>
-<div class="pillar">
-<div class="pillar-icon">🏠</div>
-<h3>Your Data, Your Machine</h3>
-<p>Run on your laptop, your server, your Raspberry Pi. Your conversations, memories, and files never leave your control. No cloud required. No surveillance.</p>
-</div>
-<div class="pillar">
-<div class="pillar-icon">🤝</div>
-<h3>Model Agnostic</h3>
-<p>Not locked to any single AI provider. Use OpenAI, Anthropic, local models, or whatever comes next. The foundation supports the entire ecosystem, not just one company.</p>
-</div>
-<div class="pillar">
-<div class="pillar-icon">🌍</div>
-<h3>Community Governed</h3>
-<p>Decisions are made in the open. The foundation exists to serve its community of builders, not shareholders. Everyone has a voice. Everyone can contribute.</p>
-</div>
-<div class="pillar">
-<div class="pillar-icon">🛡️</div>
-<h3>Privacy by Design</h3>
-<p>AI agents that touch every part of your life must be built with privacy as the foundation, not an afterthought. Your AI works for you, not an ad platform.</p>
-</div>
-<div class="pillar">
-<div class="pillar-icon">⚡</div>
-<h3>Real Agency</h3>
-<p>Not a chatbot. An agent that manages your email, calendar, messages, files, and more — across every platform you use. True digital autonomy.</p>
-</div>
-</div>
+<section id="board">
+  <div class="section-inner">
+    <div class="section-label">Governance</div>
+    <div class="section-title">Foundation Board</div>
+    <div class="section-desc">Independent leadership ensuring OpenClaw remains open, community-driven, and free from corporate capture.</div>
+
+    <div class="board-grid">
+      <div class="board-card">
+        <div class="board-emoji">PS</div>
+        <h3>Peter Steinberger</h3>
+        <div class="role">Founder</div>
+        <p>Creator of OpenClaw. Joining OpenAI to drive the next generation of personal agents. Previously founder of PSPDFKit.</p>
+      </div>
+      <div class="board-card">
+        <div class="board-emoji">DM</div>
+        <h3>Dave Morin</h3>
+        <div class="role">Founding Independent Board Member</div>
+        <p>Co-creator of Facebook Platform & Facebook Connect. Founder & CEO of Path (acq. Kakao). Founder of Slow Ventures & Offline Ventures. Board: USSA, Eventbrite. Early Apple.</p>
+      </div>
+      <div class="board-card" style="border-style:dashed">
+        <div class="board-emoji">🦞</div>
+        <h3>You?</h3>
+        <div class="role">Community</div>
+        <p>The Foundation is growing. If you believe in open-source AI that puts users first, there's a seat at this table.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="board" class="board">
-<h2>Foundation Leadership</h2>
-<p class="subtitle">Ensuring OpenClaw remains open, independent, and community-driven.</p>
-<div class="board-grid">
-<div class="board-member">
-<div class="member-avatar">🦞</div>
-<div class="member-name">Peter Steinberger</div>
-<div class="member-role">Creator</div>
-<p class="member-bio">Created OpenClaw as a playground project that became a movement. Now at OpenAI driving the next generation of personal agents. "What I want is to change the world."</p>
-</div>
-<div class="board-member">
-<div class="member-avatar">🌐</div>
-<div class="member-name">Dave Morin</div>
-<div class="member-role">Founding Independent Board Member</div>
-<p class="member-bio">Founder of Path. Early Facebook employee. Building the open internet. "Honored to serve as the founding independent board member of this extraordinary community."</p>
-</div>
-<div class="board-member">
-<div class="member-avatar">🤖</div>
-<div class="member-name">OpenAI</div>
-<div class="member-role">Founding Sponsor</div>
-<p class="member-bio">OpenAI sponsors the foundation and has committed to keeping OpenClaw open source and independent. "OpenClaw will live in a foundation as an open source project."</p>
-</div>
-</div>
+<section class="manifesto" style="padding:100px 24px">
+  <div class="manifesto-inner">
+    <h2>What the Foundation protects</h2>
+    <ul class="manifesto-points">
+      <li>Your AI agent runs on your machine, reads your data with your permission, and answers to nobody but you.</li>
+      <li>The codebase stays open source — no bait-and-switch, no relicensing, no "open core" compromises.</li>
+      <li>Multiple models, multiple providers. Today's best model shouldn't be tomorrow's lock-in.</li>
+      <li>A skills ecosystem where anyone can build, share, and extend what agents can do.</li>
+      <li>Governance by the community. Corporate sponsors support the project — they don't steer it.</li>
+      <li>Privacy isn't a feature. It's the architecture.</li>
+    </ul>
+  </div>
 </section>
 
-<section id="community" class="community">
-<h2>The Movement</h2>
-<p class="subtitle">What started as one builder's project is now a global community.</p>
-<div class="stat-grid">
-<div class="stat">
-<div class="stat-num">100%</div>
-<div class="stat-label">Open Source</div>
-</div>
-<div class="stat">
-<div class="stat-num">∞</div>
-<div class="stat-label">Models Supported</div>
-</div>
-<div class="stat">
-<div class="stat-num">0</div>
-<div class="stat-label">Data Collected</div>
-</div>
-<div class="stat">
-<div class="stat-num">1</div>
-<div class="stat-label">Mission: You</div>
-</div>
-</div>
-</section>
-
-<section class="cta-section">
-<div class="glow glow-3"></div>
-<h2>Join the Foundation</h2>
-<p>Whether you're a builder, a thinker, or someone who just wants to own their digital life — there's a place for you here.</p>
-<div class="cta-group">
-<a href="https://github.com/nicepkg/openclaw" class="btn btn-primary">🦞 Star on GitHub</a>
-<a href="https://discord.com/invite/clawd" class="btn btn-secondary">💬 Join Discord</a>
-<a href="https://docs.openclaw.ai" class="btn btn-secondary">📖 Read the Docs</a>
-</div>
-<div class="cta-tagline">The claw is the law. 🦞</div>
+<section class="final-cta">
+  <div class="lobster-row">🦞 🦞 🦞</div>
+  <h2>Own your AI.<br><em>Join the movement.</em></h2>
+  <p>Whether you're a hacker building agents, a developer contributing code, or someone who just wants to control their digital life — you belong here.</p>
+  <div class="cta-group">
+    <a href="https://github.com/openclaw/openclaw" class="btn btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      Contribute on GitHub
+    </a>
+    <a href="https://discord.com/invite/clawd" class="btn btn-ghost">Join Discord</a>
+    <a href="https://docs.openclaw.ai" class="btn btn-ghost">Read the Docs</a>
+  </div>
 </section>
 
 <footer>
-<p>OpenClaw Foundation · Open Source · Independent · Forever Free</p>
-<p style="margin-top:8px"><a href="https://github.com/nicepkg/openclaw">GitHub</a> · <a href="https://docs.openclaw.ai">Docs</a> · <a href="https://discord.com/invite/clawd">Discord</a> · <a href="https://clawhub.com">Skills</a></p>
+  <div class="footer-inner">
+    <div class="logo">🦞 OpenClaw Foundation</div>
+    <div class="footer-links">
+      <a href="https://github.com/openclaw/openclaw">GitHub</a>
+      <a href="https://docs.openclaw.ai">Docs</a>
+      <a href="https://clawhub.com">ClawHub</a>
+      <a href="https://discord.com/invite/clawd">Discord</a>
+    </div>
+    <small>Open source · Independent · The claw is the law</small>
+  </div>
 </footer>
 
 </body>
